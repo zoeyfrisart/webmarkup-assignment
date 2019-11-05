@@ -1,4 +1,4 @@
 student name: Yannick Frisart
 student number: 641234
 student class: IT1B
-Github URL: https://github.com/yannick1691/webmarkup-assignment
+Github URL: https://github.com/yannick1691/webmarkup-assignment/
