@@ -1,0 +1,132 @@
+@font-face {
+	font-family: 'Berlin Sans FB';
+	src: url('./fonts/BerlinSansFB-Reg.eot');
+	src: url('./fonts/BerlinSansFB-Reg.eot?#iefix') format('embedded-opentype'),
+			url('./fonts/BerlinSansFB-Reg.woff2') format('woff2'),
+			url('./fonts/BerlinSansFB-Reg.woff') format('woff'),
+			url('./fonts/BerlinSansFB-Reg.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* TODO Remove these colors */
+/* TODO #000000 - black */
+/* TODO #444444 - gray-700 */
+/* TODO #707070 - gray-500 */
+/* TODO #AAAAAA - gray-400 */
+/* TODO #F5F5F5 - gray-200 */
+/* TODO #FFFFFF - white */
+/* TODO #2699FB - blue */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-shadow: none;
+	scroll-behavior: smooth;
+}
+
+/* Uses arial as preferred font, and then falls back on to the system default UI fonts. */
+body {
+	font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
+	min-height: 200vh;
+	font-weight: 400;
+	color: #444;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #000000;
+	line-height: 1.25em;
+}
+
+h1 {
+	font-family: 'Berlin Sans FB';
+	font-size: 5em;
+}
+
+a {
+	color: #2699FB;
+	font-weight: 400;
+
+	/* Underline styling (for browsers that support this) */
+	text-underline-offset: 2px;
+	text-decoration-skip-ink: auto;
+	text-decoration-skip: ink;
+}
+
+p {
+	margin-bottom: 8px;
+}
+
+article {
+	padding: 32px 0;
+}
+
+/* Start | Page header */
+.main-header {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	height: 450px;
+	position: relative;
+}
+
+.background-video {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	position: absolute;
+	z-index: -1;
+	opacity: .5;
+}
+/* End | Page header */
+
+/* Start | Navigation */
+nav {
+	width: 100%;
+	height: 40px;
+	position: sticky;
+	top: 0;
+	background-color: #FFFFFF;
+}
+
+nav > ul {
+	display: flex;
+	align-items: center;
+	list-style: none;
+
+}
+
+nav > ul > li {
+	display: flex;
+}
+
+nav > ul > li > a {
+	padding: 8px 16px;
+	text-align: center;
+	background-color: #FFFFFF;
+	transition: all 100ms ease;
+}
+
+nav > ul > li > a:hover,
+nav > ul > li > a:focus {
+	background-color: #F5F5F5;
+}
+
+nav > ul > li > a:focus {
+	outline: 0;
+}
+/* End | Navigation */
+
+/*  */
