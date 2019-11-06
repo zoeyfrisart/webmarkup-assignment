@@ -106,6 +106,7 @@ article {
 
 	height: 450px;
 	position: relative;
+	overflow: hidden;
 	grid-area: header;
 }
 
@@ -117,6 +118,14 @@ article {
 	position: absolute;
 	z-index: -1;
 	opacity: .5;
+}
+
+@supports(width: calc(100% + 8px)) {
+	.background-video {
+		filter: grayscale(0.4) blur(5px);
+		height: calc(100% + 8px);
+		width: calc(100% + 8px);
+	}
 }
 /* End | Page header */
 
@@ -174,6 +183,22 @@ nav > ul > li > a:focus {
 /* Start | Sport content */
 #sportcontent {
 	grid-area: sport-content;
+}
+
+#sportcontent .sport-clubs {
+	list-style: none;
+}
+
+#sportcontent .sport-clubs li {
+	display: flex;
+	flex-direction: row;
+}
+
+#sportcontent .sport-clubs li img {
+	height: 150px;
+	width: 250px;
+	object-fit: cover;
+	object-position: center;
 }
 /* End | Sport content */
 
