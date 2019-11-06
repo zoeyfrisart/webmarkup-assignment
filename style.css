@@ -22,7 +22,6 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	border: 0;
 	box-shadow: none;
 	scroll-behavior: smooth;
 }
@@ -31,10 +30,11 @@
 body {
 	font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-size: 16px;
-	line-height: 24px;
+	line-height: 22px;
 	min-height: 200vh;
 	font-weight: 400;
 	color: #444;
+	padding: 0 0 92px;
 }
 
 h1,
@@ -70,6 +70,33 @@ article {
 	padding: 32px 0;
 }
 
+/* Start | Page content */
+.page-content {
+	padding: 0;
+
+	display: grid;
+	grid-column-gap: 16px;
+	column-gap: 16px;
+	grid-row-gap: 16px;
+	row-gap: 16px;
+	grid-template-columns: 1fr 364px;
+	grid-template-areas:
+		"header header"
+		"nav nav"
+		"main-content referral"
+		"secondary-content ."
+		"sport-content ."
+		"contact ."
+		"footer footer";
+}
+
+.page-content > article,
+.page-content > main,
+.page-content > #contactcontent {
+	padding: 32px 64px;
+}
+/* End | Page content */
+
 /* Start | Page header */
 .main-header {
 	align-items: center;
@@ -79,6 +106,7 @@ article {
 
 	height: 450px;
 	position: relative;
+	grid-area: header;
 }
 
 .background-video {
@@ -95,10 +123,12 @@ article {
 /* Start | Navigation */
 nav {
 	width: 100%;
-	height: 40px;
 	position: sticky;
 	top: 0;
 	background-color: #FFFFFF;
+	grid-area: nav;
+	z-index: 1;
+	padding-left: 48px;
 }
 
 nav > ul {
@@ -113,7 +143,7 @@ nav > ul > li {
 }
 
 nav > ul > li > a {
-	padding: 8px 16px;
+	padding: 12px 16px;
 	text-align: center;
 	background-color: #FFFFFF;
 	transition: all 100ms ease;
@@ -129,4 +159,140 @@ nav > ul > li > a:focus {
 }
 /* End | Navigation */
 
-/*  */
+/* Start | Main content */
+#maincontent {
+	grid-area: main-content;
+}
+/* End | Main content */
+
+/* Start | Secondary content */
+#secondarycontent {
+	grid-area: secondary-content;
+}
+/* End | Secondary content */
+
+/* Start | Sport content */
+#sportcontent {
+	grid-area: sport-content;
+}
+/* End | Sport content */
+
+/* Start | Referral */
+#referalcontent {
+	grid-area: referral;
+	position: sticky;
+	top: 32px;
+	padding: 32px 64px 0 0;
+}
+/* End | Referral */
+
+/* Start | Contact */
+#contactcontent {
+	grid-area: contact;
+}
+
+#contactcontent > form {
+	display: flex;
+}
+
+#contactcontent > form > fieldset {
+	padding: 16px;
+}
+
+#contactcontent > form > fieldset > legend {
+	padding: 4px;
+	margin-left: -4px;
+}
+
+#contactcontent .fields {
+	display: grid;
+	grid-template-columns: repeat(2, 300px);
+	grid-template-areas:
+		"name-label email-label"
+		"name-input email-input"
+		"message-label ."
+		"message-textarea message-textarea";
+	grid-column-gap: 16px;
+	column-gap: 16px;
+	grid-row-gap: 8px;
+	row-gap: 8px;
+}
+
+#contactcontent .fields > input,
+#contactcontent .fields > textarea {
+	padding: 8px;
+	background-color: #FFFFFF;
+	border: 1px solid #AAAAAA;
+	border-radius: 4px;
+	width: 100%;
+	transition: all 100ms ease;
+}
+
+#contactcontent .fields > input:invalid {
+	background-image: url('./img/icon-ui-1-close.svg');
+	background-size: 15px 15px;
+	background-repeat: no-repeat;
+	background-position: 276px center;
+}
+
+#contactcontent .fields > input:placeholder-shown {
+	background-image: none;
+}
+
+#contactcontent .fields > input:focus,
+#contactcontent .fields > textarea:focus {
+	background-color: #F5F5F5;
+	outline: 0;
+	border-color: #2699FB;
+}
+
+#contactcontent .fields > label:nth-of-type(1) {
+	grid-area: name-label;
+}
+
+#contactcontent .fields > input:nth-of-type(1) {
+	grid-area: name-input;
+}
+
+#contactcontent .fields > label:nth-of-type(2) {
+	grid-area: email-label;
+}
+
+#contactcontent .fields > input:nth-of-type(2) {
+	grid-area: email-input;
+}
+
+#contactcontent .fields > label:nth-of-type(3) {
+	grid-area: message-label;
+}
+
+#contactcontent .fields > textarea {
+	grid-area: message-textarea;
+	resize: vertical;
+	min-height: 120px;
+}
+/* End | Contact */
+
+/* Start | Footer */
+.page-footer {
+	grid-area: footer;
+}
+/* End | Footer */
+
+/* Start | Cookie notification */
+.cookie-notification {
+	position: fixed;
+	z-index: 2;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: #F5F5F5;
+	width: 100%;
+	padding: 16px;
+}
+
+.cookie-notification > p {
+	margin-bottom: 0;
+	line-height: 1.25em;
+}
+/* End | Cookie notification */
