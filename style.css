@@ -105,6 +105,10 @@ article {
 	padding: 32px 0;
 }
 
+article section {
+	margin-bottom: 24px;
+}
+
 img {
 	width: 100%;
 }
@@ -199,6 +203,10 @@ nav > ul > li > a {
 #maincontent {
 	grid-area: main-content;
 }
+
+#maincontent .amsterdam-header-img {
+	margin: 16px 0 32px;
+}
 /* End | Main content */
 
 /* Start | Secondary content */
@@ -245,7 +253,10 @@ nav > ul > li > a {
 #sportcontent .sport-clubs li > a:focus img {
 	filter: grayscale(.9);
 	transform: scale(1.02) translateY(-2px);
+}
 
+#sportcontent .sport-clubs li > .sport-club-description {
+	margin-bottom: 0;
 }
 
 #sportcontent .sport-clubs li > .sport-club-description a {
