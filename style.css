@@ -33,8 +33,8 @@ body {
 	line-height: 22px;
 	min-height: 200vh;
 	font-weight: 400;
-	color: #444;
-	padding: 0 0 92px;
+	color: #444444;
+	padding: 0;
 }
 
 h1,
@@ -52,9 +52,34 @@ h1 {
 	font-size: 5em;
 }
 
+h2 {
+	font-size: 2.18em;
+}
+
+h3 {
+	font-size: 1.875em;
+	margin-bottom: 8px;
+}
+
+h4 {
+	font-size: 1.4em;
+	color: #444;
+	margin-bottom: 4px;
+}
+
+footer p {
+	color: #707070;
+	font-style: italic;
+}
+
 a {
 	color: #2699FB;
 	font-weight: 400;
+	background-image: linear-gradient(to right, #ffffff 50%, #2699FB 50%);
+	background-position: 0;
+	background-size: 200%;
+	transition: all 200ms;
+	padding: 0 4px;
 
 	/* Underline styling (for browsers that support this) */
 	text-underline-offset: 2px;
@@ -62,24 +87,39 @@ a {
 	text-decoration-skip: ink;
 }
 
+a:hover,
+a:focus {
+	background-position: -100%;
+	color: #FFFFFF;
+}
+
+a:focus {
+	outline: 0;
+}
+
 p {
-	margin-bottom: 8px;
+	margin-bottom: 16px;
 }
 
 article {
 	padding: 32px 0;
 }
 
+img {
+	width: 100%;
+}
+
 /* Start | Page content */
 .page-content {
 	padding: 0;
 
+	justify-content: center;
 	display: grid;
 	grid-column-gap: 16px;
 	column-gap: 16px;
 	grid-row-gap: 16px;
 	row-gap: 16px;
-	grid-template-columns: 1fr 364px;
+	grid-template-columns: 780px 364px;
 	grid-template-areas:
 		"header header"
 		"nav nav"
@@ -91,7 +131,6 @@ article {
 }
 
 .page-content > article,
-.page-content > main,
 .page-content > #contactcontent {
 	padding: 32px 64px;
 }
@@ -144,7 +183,6 @@ nav > ul {
 	display: flex;
 	align-items: center;
 	list-style: none;
-
 }
 
 nav > ul > li {
@@ -154,17 +192,6 @@ nav > ul > li {
 nav > ul > li > a {
 	padding: 12px 16px;
 	text-align: center;
-	background-color: #FFFFFF;
-	transition: all 100ms ease;
-}
-
-nav > ul > li > a:hover,
-nav > ul > li > a:focus {
-	background-color: #F5F5F5;
-}
-
-nav > ul > li > a:focus {
-	outline: 0;
 }
 /* End | Navigation */
 
@@ -192,13 +219,38 @@ nav > ul > li > a:focus {
 #sportcontent .sport-clubs li {
 	display: flex;
 	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 16px;
 }
 
-#sportcontent .sport-clubs li img {
+#sportcontent .sport-clubs li > a {
+	padding: 0;
+	background-image: unset;
+	background-color: #ffffff;
+	text-decoration: none;
+	margin-right: 32px;
+	height: 150px;
+}
+
+#sportcontent .sport-clubs li > a img {
 	height: 150px;
 	width: 250px;
 	object-fit: cover;
 	object-position: center;
+	transition: all 200ms ease-in-out;
+}
+
+#sportcontent .sport-clubs li > a:hover img,
+#sportcontent .sport-clubs li > a:focus img {
+	filter: grayscale(.9);
+	transform: scale(1.02) translateY(-2px);
+
+}
+
+#sportcontent .sport-clubs li > .sport-club-description a {
+	padding: 4px;
+	margin-left: -4px;
 }
 /* End | Sport content */
 
@@ -208,6 +260,11 @@ nav > ul > li > a:focus {
 	position: sticky;
 	top: 32px;
 	padding: 32px 64px 0 0;
+}
+
+#referalcontent footer p {
+	font-style: normal;
+	margin-bottom: 4px;
 }
 /* End | Referral */
 
@@ -300,7 +357,17 @@ nav > ul > li > a:focus {
 
 /* Start | Footer */
 .page-footer {
+	align-items: center;
 	grid-area: footer;
+	display: flex;
+	justify-content: center;
+	background-color: #f5f5f5;
+	padding: 16px 32px 92px;
+}
+
+.page-footer p {
+	margin-bottom: 0;
+	font-style: normal;
 }
 /* End | Footer */
 
@@ -319,5 +386,6 @@ nav > ul > li > a:focus {
 .cookie-notification > p {
 	margin-bottom: 0;
 	line-height: 1.25em;
+	font-style: normal;
 }
 /* End | Cookie notification */

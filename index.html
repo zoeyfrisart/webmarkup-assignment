@@ -7,24 +7,31 @@
 		<title>Amsterdam</title>
 		<link rel="stylesheet" href="style.css">
 	</head>
+
+	<!--
+		All images and videos are royalty-free.
+		The source is linked in the comment by the photo.
+	-->
+
 	<body>
 		<!-- Cookie notification is placed here so a screen reader reads this content first. -->
 		<section class="cookie-notification">
-			<h3>Cookie notification</h3>
+			<h4>Cookie notification</h4>
 			<p>This website uses cookies to function, by continuing to use this website you agree to the cookies.</p>
 		</section>
 
+		<header class="main-header">
+			<video class="background-video" autoplay muted loop>
+				<source src="./video/background-video.webm" type="video/webm">
+				<source src="./video/background-video.mp4" type="video/mp4">
+				Your browser doesn't support the video element.
+			</video>
+
+			<h1>Amsterdam</h1>
+			<h2>The city and you!</h2>
+		</header>
+
 		<article class="page-content">
-			<header class="main-header">
-				<video class="background-video" autoplay muted loop>
-					<source src="./video/background-video.webm" type="video/webm">
-					<source src="./video/background-video.mp4" type="video/mp4">
-				</video>
-
-				<h1>Amsterdam - title</h1>
-				<h2>Payof</h2>
-			</header>
-
 			<nav>
 				<ul>
 					<li><a href="#maincontent">Main</a></li>
@@ -34,33 +41,37 @@
 				</ul>
 			</nav>
 
-			<main id="maincontent">
-				<article>
-					<header>
-						<h3>The city of Amsterdam</h3>
-					</header>
+			<article id="maincontent">
+				<header>
+					<h3>The city of Amsterdam</h3>
+				</header>
 
-					<section>
-						<h4>The many great activities in Amsterdam</h4>
-						<p>Amsterdam is commonly known around the world for its weed and the red-light district. But there is a lot more to Amsterdam than that, and there is definitely a lot more to do then that. You could take a boat tour through the canals of Amsterdam or visit one of the many great museums like the Van Gogh Museum or the Rijksmuseum. You could also visit the Anne Frank House, where you can get a look back in time into the life and hiding of Anne Frank during WW2.</p>
+				<!--
+					Image by Abhishek Baadkar
+					source: https://pixabay.com/photos/amsterdam-holland-architecture-1643644/
+				-->
+				<img
+					src="./img/amsterdam-header-1920.jpg"
+					sizes=""
+					srcset=""
+					alt=""
+					class="amsterdam-header-img"
+				>
 
-						<h4>TonTon Club</h4>
-						<p>If you’re more into casual activities, then try visiting the TonTon Club. The TonTon Club is an arcade hall with a bunch of Japanese arcade games such as Mario kart and Pac-Man. There’s always a bunch of people here and it has a great mood. If you’re in to arcade games, then you are guaranteed to leave this place full of joy. The TonTon Club has multiple locations so for more info you should visit their website.</p>
+				<section>
+					<h4>The many great activities in Amsterdam</h4>
+					<p>Amsterdam is commonly known around the world for its weed and the red-light district. But there is a lot more to Amsterdam than that, and there is definitely a lot more to do then that. You could take a boat tour through the canals of Amsterdam or visit one of the many great museums like the Van Gogh Museum or the Rijksmuseum. You could also visit the Anne Frank House, where you can get a look back in time into the life and hiding of Anne Frank during WW2.</p>
 
-						<img
-							src="https://placeimg.com/640/480/any"
-							sizes=""
-							srcset=""
-							alt=""
-						>
-						<img src="https://placeimg.com/640/480/any" alt="">
-					</section>
+					<h4>TonTon Club</h4>
+					<p>If you’re more into casual activities, then try visiting the TonTon Club. The TonTon Club is an arcade hall with a bunch of Japanese arcade games such as Mario kart and Pac-Man. There’s always a bunch of people here and it has a great mood. If you’re in to arcade games, then you are guaranteed to leave this place full of joy. The TonTon Club has multiple locations so for more info you should visit their website.</p>
 
-					<footer>
-						<p>For more great activities in Amsterdam you can visit: <a href="https://www.iamsterdam.com/en/">iamsterdam.com</a></p>
-					</footer>
-				</article>
-			</main>
+					<img src="https://placeimg.com/640/480/any" alt="">
+				</section>
+
+				<footer>
+					<p>For more great activities in Amsterdam you can visit: <a href="https://www.iamsterdam.com/en/">iamsterdam.com</a></p>
+				</footer>
+			</article>
 
 			<article id="secondarycontent">
 				<header>
@@ -105,8 +116,11 @@
 								>
 							</a>
 
-							<p>10th Planet Jiu Jitsu teaches Jiu Jitsu with custom position based on a combination of Jiu Jitsu and martial arts.</p>
-							<a href="https://www.10thplanetjj.amsterdam/">Visit 10th Planet Jiu Jitsu</a>
+							<section class="sport-club-description">
+								<h4>10th Planet Jiu Jitsu</h4>
+								<p>Teaches Jiu Jitsu with custom position based on a combination of Jiu Jitsu and martial arts.</p>
+								<a href="https://www.10thplanetjj.amsterdam/">Visit 10th Planet Jiu Jitsu</a>
+							</section>
 						</li>
 
 						<!-- BJJAA -->
@@ -120,8 +134,11 @@
 								>
 							</a>
 
-							<p>BJJAA teaches Brazilian Jiu Jitsu, while also offering Yoga classes as a great addition to your training.</p>
-							<a href="http://www.bjjaa.nl/">Visit BJJAA</a>
+							<section class="sport-club-description">
+								<h4>BJJAA</h4>
+								<p>Teaches Brazilian Jiu Jitsu, while also offering Yoga classes as a great addition to your training.</p>
+								<a href="http://www.bjjaa.nl/">Visit BJJAA</a>
+							</section>
 						</li>
 
 						<!-- Carlson Gracie Amsterdam -->
@@ -135,8 +152,11 @@
 								>
 							</a>
 
-							<p>Carlson Gracie Amsterdam teaches Brazilian Jiu Jitsu, to both beginners and experienced people. The classes are given in English.</p>
-							<a href="http://www.marcosflexa.nl/">Visit Carlson Gracie Amsterdam</a>
+							<section class="sport-club-description">
+								<h4>Carlson Gracie Amsterdam</h4>
+								<p>Teaches Brazilian Jiu Jitsu, to both beginners and experienced people. The classes are given in English.</p>
+								<a href="http://www.marcosflexa.nl/">Visit Carlson Gracie Amsterdam</a>
+							</section>
 						</li>
 
 						<!-- Team Agua -->
@@ -150,8 +170,11 @@
 								>
 							</a>
 
-							<p>Team Agua teaches Brazilian Jiu Jitsu in a friendly and relaxed environment that’s open to everyone.</p>
-							<a href="https://www.teamagua.com/">Visit Team Agua</a>
+							<section class="sport-club-description">
+								<h4>Team Agua</h4>
+								<p>Teaches Brazilian Jiu Jitsu in a friendly and relaxed environment that’s open to everyone.</p>
+								<a href="https://www.teamagua.com/">Visit Team Agua</a>
+							</section>
 						</li>
 
 						<!-- Inside Defence -->
@@ -165,8 +188,11 @@
 								>
 							</a>
 
-							<p>Inside Defence provides a Brazilian Jiu Jitsu challenge for starters, where they get you ready for your first tournament in 6 months.</p>
-							<a href="https://insidedefence.nl/braziliaans-jiu-jitsu-no-gi/">Visit Inside Defence</a>
+							<section class="sport-club-description">
+								<h4>Inside Defence</h4>
+								<p>Inside Defence provides a Brazilian Jiu Jitsu challenge for starters, where they get you ready for your first tournament in 6 months.</p>
+								<a href="https://insidedefence.nl/braziliaans-jiu-jitsu-no-gi/">Visit Inside Defence</a>
+							</section>
 						</li>
 
 						<!-- USC -->
@@ -180,8 +206,11 @@
 								>
 							</a>
 
-							<p>USC provides a course in Brazilian Jiu Jitsu, this course will teach you the techniques of Brazilian Jiu Jitsu.</p>
-							<a href="https://usc.uva.nl/en/sports/brazilian-jiu-jitsu/">Visit USC</a>
+							<section class="sport-club-description">
+								<h4>USC</h4>
+								<p>USC provides a course in Brazilian Jiu Jitsu, this course will teach you the techniques of Brazilian Jiu Jitsu.</p>
+								<a href="https://usc.uva.nl/en/sports/brazilian-jiu-jitsu/">Visit USC</a>
+							</section>
 						</li>
 
 						<!-- Martial Arts Academy Amsterdam -->
@@ -195,8 +224,11 @@
 								>
 							</a>
 
-							<p>The Martial arts Academy Amsterdam teaches Brazilian Jiu Jitsu to both children and adults.</p>
-							<a href="https://maa-amsterdam.nl/brazilian-jiu-jitsu">Visit Martial Arts Academy Amsterdam</a>
+							<section class="sport-club-description">
+								<h4>The Martial Arts Academy Amsterdam</h4>
+								<p>Teaches Brazilian Jiu Jitsu to both children and adults. With the option of private training.</p>
+								<a href="https://maa-amsterdam.nl/brazilian-jiu-jitsu">Visit Martial Arts Academy Amsterdam</a>
+							</section>
 						</li>
 
 						<!-- Team Leijdekker -->
@@ -210,8 +242,11 @@
 								>
 							</a>
 
-							<p>Team Leijdekker teaches Brazilian Jiu Jitsu as a self defense method, as it allows you to defeat opponents that are stronger then you.</p>
-							<a href="http://www.bjj-purmerend.nl/braziliaans-jiu-jitsu/">Visit Team Leijdekker</a>
+							<section class="sport-club-description">
+								<h4>Team Leijdekker</h4>
+								<p>Teaches Brazilian Jiu Jitsu as a self defense method, as it allows you to defeat opponents that are stronger then you.</p>
+								<a href="http://www.bjj-purmerend.nl/braziliaans-jiu-jitsu/">Visit Team Leijdekker</a>
+							</section>
 						</li>
 
 						<!-- Amsterdam BJJ -->
@@ -225,8 +260,11 @@
 								>
 							</a>
 
-							<p>Amsterdam Brazilian Jiu-Jitsu teaches Brazilian Jiu Jitsu, they hold a total of 15 classes per week.</p>
-							<a href="http://www.amsterdambjj.nl">Visit Amsterdam BJJ</a>
+							<section class="sport-club-description">
+								<h4>Amsterdam BJJ</h4>
+								<p>Amsterdam Brazilian Jiu-Jitsu teaches Brazilian Jiu Jitsu, they hold a total of 15 classes per week.</p>
+								<a href="http://www.amsterdambjj.nl">Visit Amsterdam BJJ</a>
+							</section>
 						</li>
 
 						<!-- Barao Jiu Jitsu -->
@@ -240,8 +278,11 @@
 								>
 							</a>
 
-							<p>Barao Jiu Jitsu teaches Brazilian Jiu Jitsu in the evenings on Monday and Wednesday to people 15 years and older.</p>
-							<a href="https://baraojiujitsu.com/en">Visit Barao Jiu Jitsu</a>
+							<section class="sport-club-description">
+								<h4>Barao Jiu Jitsu</h4>
+								<p>Teaches Brazilian Jiu Jitsu in the evenings on Monday and Wednesday to people 15 years and older.</p>
+								<a href="https://baraojiujitsu.com/en">Visit Barao Jiu Jitsu</a>
+							</section>
 						</li>
 					</ul>
 				</section>
@@ -253,7 +294,7 @@
 
 			<aside id="referalcontent">
 				<header>
-					<h3>Team Leijdekker</h3>
+					<h4>Team Leijdekker</h4>
 				</header>
 
 				<p>Team Leijdekker teaches Brazilian Jiu Jitsu as a self-defense method, the classes are given by Maxim Leijdekker.</p>
@@ -288,9 +329,9 @@
 				</form>
 			</section>
 
-			<footer class="page-footer">
-				<p>&copy; Copyright 2019 all rights reserved - Yannick Frisart</p>
-			</footer>
 		</article>
+		<footer class="page-footer">
+			<p>&copy; Copyright 2019 all rights reserved - Yannick Frisart</p>
+		</footer>
 	</body>
 </html>
