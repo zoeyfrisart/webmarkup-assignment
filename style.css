@@ -77,7 +77,7 @@ a {
 	font-weight: 400;
 	background-image: linear-gradient(to right, #ffffff 50%, #2699FB 50%);
 	background-position: 0;
-	background-size: 200%;
+	background-size: 210%;
 	transition: all 200ms;
 	padding: 0 4px;
 
@@ -89,7 +89,7 @@ a {
 
 a:hover,
 a:focus {
-	background-position: -100%;
+	background-position: -95%;
 	color: #FFFFFF;
 }
 
@@ -136,7 +136,7 @@ img {
 
 .page-content > article,
 .page-content > #contactcontent {
-	padding: 32px 64px;
+	padding: 48px 64px 16px;
 }
 /* End | Page content */
 
@@ -364,6 +364,29 @@ nav > ul > li > a {
 	resize: vertical;
 	min-height: 120px;
 }
+
+#contactcontent button {
+	padding: 8px 16px;
+	border: 1px solid #707070;
+	background-color: #000000;
+	color: #FFFFFF;
+	font-size: 0.9em;
+	float: right;
+	text-transform: uppercase;
+	font-weight: 700;
+	border-radius: 4px;
+	transition: all 150ms ease;
+}
+
+#contactcontent button:hover {
+	box-shadow: 0 2px 2px 0 #AAAAAA;
+	background-color: #2699FB;
+}
+
+#contactcontent button:focus {
+	outline: 2px solid #2699FB;
+	border-radius: 0;
+}
 /* End | Contact */
 
 /* Start | Footer */
@@ -372,7 +395,7 @@ nav > ul > li > a {
 	grid-area: footer;
 	display: flex;
 	justify-content: center;
-	background-color: #f5f5f5;
+	background-color: #F5F5F5;
 	padding: 16px 32px 92px;
 }
 
