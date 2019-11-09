@@ -1,40 +1,37 @@
+/* Define Berlin Sans font */
 @font-face {
 	font-family: 'Berlin Sans FB';
+	font-style: normal;
+	font-weight: 400;
 	src: url('./fonts/BerlinSansFB-Reg.eot');
 	src: url('./fonts/BerlinSansFB-Reg.eot?#iefix') format('embedded-opentype'),
 			url('./fonts/BerlinSansFB-Reg.woff2') format('woff2'),
 			url('./fonts/BerlinSansFB-Reg.woff') format('woff'),
 			url('./fonts/BerlinSansFB-Reg.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
 }
 
-/* TODO Remove these colors */
-/* TODO #000000 - black */
-/* TODO #444444 - gray-700 */
-/* TODO #707070 - gray-500 */
-/* TODO #AAAAAA - gray-400 */
-/* TODO #F5F5F5 - gray-200 */
-/* TODO #FFFFFF - white */
-/* TODO #2699FB - blue */
-
+/*
+ * ─── DEFINE STANDARD STYLING ────────────────────────────────────────────────────
+ */
 * {
+	box-shadow: none;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	box-shadow: none;
+
 	scroll-behavior: smooth;
 }
 
 /* Uses arial as preferred font, and then falls back on to the system default UI fonts. */
 body {
+	/* Font styling */
+	color: #444444;
 	font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-size: 16px;
-	line-height: 22px;
-	min-height: 200vh;
 	font-weight: 400;
-	color: #444444;
+	line-height: 22px;
 	padding: 0;
+	margin: 0;
 }
 
 h1,
@@ -62,8 +59,8 @@ h3 {
 }
 
 h4 {
+	color: #444444;
 	font-size: 1.4em;
-	color: #444;
 	margin-bottom: 4px;
 }
 
@@ -73,18 +70,21 @@ footer p {
 }
 
 a {
-	color: #2699FB;
-	font-weight: 400;
+	padding: 0 4px;
+
 	background-image: linear-gradient(to right, #ffffff 50%, #2699FB 50%);
 	background-position: 0;
 	background-size: 210%;
+
+	color: #2699FB;
+	font-weight: 400;
+
 	transition: all 200ms;
-	padding: 0 4px;
 
 	/* Underline styling (for browsers that support this) */
-	text-underline-offset: 2px;
 	text-decoration-skip-ink: auto;
 	text-decoration-skip: ink;
+	text-underline-offset: 2px;
 }
 
 a:hover,
@@ -112,20 +112,24 @@ article section {
 img {
 	width: 100%;
 }
+/* ──────────────────────────────────────────────────────────────────────────────── */
 
-/* Start | Page content */
+/*
+ * ─── PAGE CONTENT ───────────────────────────────────────────────────────────────
+ */
 .page-content {
-	padding: 0;
-
-	justify-content: center;
 	display: grid;
+	padding: 0;
+	justify-content: center;
+
+	/* grid-column-gap & row are deprecated but not all browsers support the new property. */
 	grid-column-gap: 16px;
 	column-gap: 16px;
 	grid-row-gap: 16px;
 	row-gap: 16px;
+
 	grid-template-columns: 780px 364px;
 	grid-template-areas:
-		"header header"
 		"nav nav"
 		"main-content referral"
 		"secondary-content ."
@@ -138,28 +142,34 @@ img {
 .page-content > #contactcontent {
 	padding: 48px 64px 16px;
 }
-/* End | Page content */
+/* ──────────────────────────────────────────────────────────────────────────────── */
 
-/* Start | Page header */
+/*
+ * ─── PAGE HEADER ────────────────────────────────────────────────────────────────
+ */
 .main-header {
 	align-items: center;
-	display: flex;
 	flex-direction: column;
 	justify-content: center;
-
-	height: 450px;
 	position: relative;
+
+	display: flex;
+	height: 450px;
 	overflow: hidden;
-	grid-area: header;
 }
 
 .background-video {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: -1;
+
 	height: 100%;
 	width: 100%;
+
 	object-fit: cover;
 	object-position: center;
-	position: absolute;
-	z-index: -1;
 	opacity: .5;
 }
 
@@ -170,22 +180,29 @@ img {
 		width: calc(100% + 8px);
 	}
 }
-/* End | Page header */
+/* ──────────────────────────────────────────────────────────────────────────────── */
 
-/* Start | Navigation */
+/*
+ * ─── NAVIGATION ─────────────────────────────────────────────────────────────────
+ */
 nav {
-	width: 100%;
-	position: sticky;
-	top: 0;
 	background-color: #FFFFFF;
 	grid-area: nav;
-	z-index: 1;
 	padding-left: 48px;
+	position: sticky;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+nav label,
+nav input {
+	display: none;
 }
 
 nav > ul {
-	display: flex;
 	align-items: center;
+	display: flex;
 	list-style: none;
 }
 
@@ -197,9 +214,11 @@ nav > ul > li > a {
 	padding: 12px 16px;
 	text-align: center;
 }
-/* End | Navigation */
+/* ──────────────────────────────────────────────────────────────────────────────── */
 
-/* Start | Main content */
+/*
+ * ─── MAIN CONTENT ───────────────────────────────────────────────────────────────
+ */
 #maincontent {
 	grid-area: main-content;
 }
@@ -207,15 +226,20 @@ nav > ul > li > a {
 #maincontent .amsterdam-header-img {
 	margin: 16px 0 32px;
 }
-/* End | Main content */
+/* ──────────────────────────────────────────────────────────────────────────────── */
 
-/* Start | Secondary content */
+/*
+ * ─── SECONDARY CONTENT ──────────────────────────────────────────────────────────
+ */
 #secondarycontent {
 	grid-area: secondary-content;
 }
-/* End | Secondary content */
+/* ──────────────────────────────────────────────────────────────────────────────── */
 
-/* Start | Sport content */
+
+/*
+ * ─── SPORT CONTENT ──────────────────────────────────────────────────────────────
+ */
 #sportcontent {
 	grid-area: sport-content;
 }
@@ -225,25 +249,29 @@ nav > ul > li > a {
 }
 
 #sportcontent .sport-clubs li {
+	align-items: center;
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-start;
-	align-items: center;
+
 	margin-bottom: 16px;
 }
 
 #sportcontent .sport-clubs li > a {
-	padding: 0;
-	background-image: unset;
-	background-color: #ffffff;
-	text-decoration: none;
 	margin-right: 32px;
+	padding: 0;
+
+	background-color: #ffffff;
+	background-image: unset;
+
 	height: 150px;
+	text-decoration: none;
 }
 
 #sportcontent .sport-clubs li > a img {
 	height: 150px;
 	width: 250px;
+
 	object-fit: cover;
 	object-position: center;
 	transition: all 200ms ease-in-out;
@@ -260,26 +288,30 @@ nav > ul > li > a {
 }
 
 #sportcontent .sport-clubs li > .sport-club-description a {
-	padding: 4px;
 	margin-left: -4px;
+	padding: 4px;
 }
-/* End | Sport content */
+/* ──────────────────────────────────────────────────────────────────────────────── */
 
-/* Start | Referral */
+/*
+ * ─── REFERRAL ───────────────────────────────────────────────────────────────────
+ */
 #referalcontent {
 	grid-area: referral;
+	padding: 32px 64px 0 0;
 	position: sticky;
 	top: 32px;
-	padding: 32px 64px 0 0;
 }
 
 #referalcontent footer p {
 	font-style: normal;
 	margin-bottom: 4px;
 }
-/* End | Referral */
+/* ──────────────────────────────────────────────────────────────────────────────── */
 
-/* Start | Contact */
+/*
+ * ─── CONTACT ────────────────────────────────────────────────────────────────────
+ */
 #contactcontent {
 	grid-area: contact;
 }
@@ -293,39 +325,43 @@ nav > ul > li > a {
 }
 
 #contactcontent > form > fieldset > legend {
-	padding: 4px;
 	margin-left: -4px;
+	padding: 4px;
 }
 
 #contactcontent .fields {
 	display: grid;
+
+	grid-column-gap: 16px;
+	column-gap: 16px;
+	grid-row-gap: 8px;
+	row-gap: 8px;
+
 	grid-template-columns: repeat(2, 300px);
 	grid-template-areas:
 		"name-label email-label"
 		"name-input email-input"
 		"message-label ."
 		"message-textarea message-textarea";
-	grid-column-gap: 16px;
-	column-gap: 16px;
-	grid-row-gap: 8px;
-	row-gap: 8px;
 }
 
 #contactcontent .fields > input,
 #contactcontent .fields > textarea {
 	padding: 8px;
+
 	background-color: #FFFFFF;
 	border: 1px solid #AAAAAA;
+
 	border-radius: 4px;
-	width: 100%;
 	transition: all 100ms ease;
+	width: 100%;
 }
 
 #contactcontent .fields > input:invalid {
 	background-image: url('./img/icon-ui-1-close.svg');
-	background-size: 15px 15px;
-	background-repeat: no-repeat;
 	background-position: 276px center;
+	background-repeat: no-repeat;
+	background-size: 15px 15px;
 }
 
 #contactcontent .fields > input:placeholder-shown {
@@ -335,8 +371,8 @@ nav > ul > li > a {
 #contactcontent .fields > input:focus,
 #contactcontent .fields > textarea:focus {
 	background-color: #F5F5F5;
-	outline: 0;
 	border-color: #2699FB;
+	outline: 0;
 }
 
 #contactcontent .fields > label:nth-of-type(1) {
@@ -361,65 +397,383 @@ nav > ul > li > a {
 
 #contactcontent .fields > textarea {
 	grid-area: message-textarea;
-	resize: vertical;
 	min-height: 120px;
+	resize: vertical;
 }
 
 #contactcontent button {
+	float: right;
 	padding: 8px 16px;
-	border: 1px solid #707070;
+
 	background-color: #000000;
+	border: 1px solid #707070;
+
 	color: #FFFFFF;
 	font-size: 0.9em;
-	float: right;
-	text-transform: uppercase;
 	font-weight: 700;
+	text-transform: uppercase;
+
 	border-radius: 4px;
 	transition: all 150ms ease;
 }
 
 #contactcontent button:hover {
-	box-shadow: 0 2px 2px 0 #AAAAAA;
 	background-color: #2699FB;
+	box-shadow: 0 2px 2px 0 #AAAAAA;
 }
 
 #contactcontent button:focus {
-	outline: 2px solid #2699FB;
 	border-radius: 0;
+	outline: 2px solid #2699FB;
 }
-/* End | Contact */
+/* ──────────────────────────────────────────────────────────────────────────────── */
 
-/* Start | Footer */
+/*
+ * ─── FOOTER ─────────────────────────────────────────────────────────────────────
+ */
 .page-footer {
 	align-items: center;
-	grid-area: footer;
-	display: flex;
-	justify-content: center;
 	background-color: #F5F5F5;
+	display: flex;
+	grid-area: footer;
+	justify-content: center;
 	padding: 16px 32px 92px;
 }
 
 .page-footer p {
-	margin-bottom: 0;
 	font-style: normal;
+	margin-bottom: 0;
 }
-/* End | Footer */
+/* ──────────────────────────────────────────────────────────────────────────────── */
 
-/* Start | Cookie notification */
+/*
+ * ─── COOKIE NOTIFICATION ────────────────────────────────────────────────────────
+ */
 .cookie-notification {
-	position: fixed;
-	z-index: 2;
-	bottom: 0;
 	right: 0;
+	bottom: 0;
 	left: 0;
+	position: fixed;
+
 	background-color: #F5F5F5;
-	width: 100%;
 	padding: 16px;
+	width: 100%;
+	z-index: 2;
 }
 
 .cookie-notification > p {
-	margin-bottom: 0;
-	line-height: 1.25em;
 	font-style: normal;
+	line-height: 1.25em;
+	margin-bottom: 0;
 }
-/* End | Cookie notification */
+/* ──────────────────────────────────────────────────────────────────────────────── */
+
+/*
+ * ─── SCREENS: 780 - 1279 ────────────────────────────────────────────────────────
+ */
+@media screen and (max-width: 1179px) {
+	.page-content {
+		grid-template-columns: repeat(2, 400px);
+		grid-template-areas:
+			"nav nav"
+			"main-content main-content"
+			"secondary-content secondary-content"
+			"sport-content sport-content"
+			"referral referral"
+			"contact contact"
+			"footer footer";
+	}
+
+	/*
+	 * ─── SPORT ──────────────────────────────────────────────────────────────────────
+	 */
+	#sportcontent .sport-clubs {
+		display: grid;
+		grid-column-gap: 24px;
+		column-gap: 24px;
+		grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+	}
+
+	#sportcontent .sport-clubs > li {
+		background-color: #FFFFFF;
+		border-radius: 4px;
+		box-shadow: 0 2px 4px #AAAAAA;
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+	}
+
+	#sportcontent .sport-clubs li > a {
+		margin-right: 0;
+		width: 100%;
+	}
+
+	#sportcontent .sport-clubs li > a img {
+		border-radius: 4px 4px 0 0;
+		width: 100%;
+	}
+
+	#sportcontent .sport-clubs li > a:hover img,
+	#sportcontent .sport-clubs li > a:focus img  {
+		filter: sepia(1) saturate(.4);
+		transform: unset;
+	}
+
+	#sportcontent .sport-clubs li .sport-club-description {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		padding: 24px 32px 32px;
+	}
+
+	#sportcontent .sport-clubs li .sport-club-description > p {
+		flex-grow: 1;
+	}
+
+	#sportcontent .sport-clubs li .sport-club-description > a {
+		align-self: flex-start;
+	}
+	/* ──────────────────────────────────────────────────────────────────────────────── */
+
+	/*
+	 * ─── REFERRAL ───────────────────────────────────────────────────────────────────
+	 */
+	#referalcontent {
+		padding: 0 64px 32px;
+		position: relative;
+	}
+	/* ──────────────────────────────────────────────────────────────────────────────── */
+
+
+	/*
+	 * ─── CONTACT ────────────────────────────────────────────────────────────────────
+	 */
+	#contactcontent fieldset {
+		width: 100%;
+	}
+
+	#contactcontent .fields {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	/* ──────────────────────────────────────────────────────────────────────────────── */
+
+	.page-footer {
+		padding-bottom: 128px;
+	}
+}
+
+/*
+ * ─── SCREENS: 0 - 830 ────────────────────────────────────────────────────────────
+ */
+@media screen and (max-width: 830px) {
+	nav {
+		overflow: hidden;
+		padding-left: 16px;
+	}
+
+	/*
+	 * Here we clear the grid area's, as this causes some layout issues in certain browsers.
+	 */
+	#maincontent,
+	#secondarycontent,
+	#sportcontent,
+	#referalcontent,
+	#contactcontent,
+	.page-footer {
+		grid-area: unset;
+	}
+
+	/*
+	 * ─── PAGE CONTENT ───────────────────────────────────────────────────────────────
+	 */
+	.page-content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.page-content > article,
+	.page-content > #contactcontent {
+		padding: 48px 32px 16px;
+	}
+	/* ──────────────────────────────────────────────────────────────────────────────── */
+
+
+	/*
+	 * ─── SPORT ──────────────────────────────────────────────────────────────────────
+	 */
+	#sportcontent .sport-clubs li .sport-club-description {
+		padding: 24px 16px 32px;
+	}
+	/* ──────────────────────────────────────────────────────────────────────────────── */
+
+	/*
+	 * ─── REFERRAL ───────────────────────────────────────────────────────────────────
+	 */
+	#referalcontent {
+		padding: 0 32px 16px;
+	}
+	/* ──────────────────────────────────────────────────────────────────────────────── */
+}
+
+/*
+ * ─── SCREENS: 0 - 480 ───────────────────────────────────────────────────────────
+ */
+@media screen and (max-width: 480px) {
+	/*
+	 * ─── NAVIGATION ─────────────────────────────────────────────────────────────────
+	 */
+	nav {
+		z-index: 2;
+	}
+
+	nav ul {
+		display: none;
+	}
+
+	/* Hamburger toggle */
+	nav input {
+		display: unset;
+		height: 0;
+		opacity: 0;
+		visibility: hidden;
+		width: 0;
+	}
+
+	nav label {
+		display: unset;
+		transition: opacity 100ms ease;
+	}
+
+	nav label:hover,
+	nav label:focus {
+		opacity: 0.5;
+	}
+
+	nav label img {
+		margin-top: 5px;
+		padding: 8px;
+		height: 48px;
+		width: 48px;
+	}
+
+	/* Hamburger menu content */
+	nav input:checked ~ ul {
+		align-items: stretch;
+		display: flex;
+		flex-direction: column;
+		padding: 12px 32px 16px 16px;
+		width: 100%;
+	}
+
+	nav ul li a {
+		background-color: #FFFFFF;
+		background-image: unset;
+		background-size: 100%;
+
+		font-size: 1.2em;
+		text-decoration: none;
+
+		transition: all 75ms ease;
+		width: 100%;
+	}
+
+	nav ul li a:hover,
+	nav ul li a:focus {
+		background-color: #2699FB;
+	}
+	/* ──────────────────────────────────────────────────────────────────────────────── */
+
+	.main-header {
+		height: 300px;
+	}
+
+	h1 {
+		font-size: 3.5em;
+	}
+
+	h2 {
+		font-size: 1.8em;
+	}
+
+	.page-content > article,
+	.page-content > #contactcontent {
+		padding-top: 64px;
+	}
+
+	/*
+	 * ─── SPORT ──────────────────────────────────────────────────────────────────────
+	 */
+	#sportcontent .sport-clubs > li {
+		border-radius: 0;
+		box-shadow: none;
+		overflow: unset;
+	}
+
+	#sportcontent .sport-clubs li > a {
+		height: 200px;
+	}
+
+	#sportcontent .sport-clubs li > a img {
+		border-radius: 0;
+		height: 200px;
+	}
+
+	#sportcontent .sport-clubs li .sport-club-description {
+		padding: 24px 0 32px;
+	}
+
+	#sportcontent .sport-clubs > li:nth-last-of-type(1) .sport-club-description {
+		padding: 24px 0 0;
+	}
+	/* ──────────────────────────────────────────────────────────────────────────────── */
+
+	/*
+	 * ─── CONTACT FORM ───────────────────────────────────────────────────────────────
+	 */
+	#contactcontent .fields {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#contactcontent .fields label {
+		margin-bottom: 4px;
+	}
+
+	#contactcontent .fields input,
+	#contactcontent .fields textarea {
+		font-size: 0.95em;
+		padding: 16px 12px;
+	}
+
+	#contactcontent .fields input {
+		margin-bottom: 16px;
+	}
+
+	#contactcontent button {
+		padding: 12px 16px;
+		width: 100%;
+	}
+	/* ──────────────────────────────────────────────────────────────────────────────── */
+}
+
+/*
+ * ─── SCREENS: 0 - 350 ───────────────────────────────────────────────────────────
+ */
+@media screen and (max-width: 350px) {
+	nav {
+		padding: 0;
+	}
+
+	nav input:checked ~ ul {
+		padding: 12px 16px 16px;
+	}
+
+	.page-content > article,
+	.page-content > #contactcontent {
+		padding: 64px 16px 8px;
+	}
+
+	#referalcontent {
+		padding: 0 16px 16px;
+	}
+}
