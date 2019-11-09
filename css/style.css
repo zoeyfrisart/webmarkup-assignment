@@ -3,11 +3,11 @@
 	font-family: 'Berlin Sans FB';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./fonts/BerlinSansFB-Reg.eot');
-	src: url('./fonts/BerlinSansFB-Reg.eot?#iefix') format('embedded-opentype'),
-			url('./fonts/BerlinSansFB-Reg.woff2') format('woff2'),
-			url('./fonts/BerlinSansFB-Reg.woff') format('woff'),
-			url('./fonts/BerlinSansFB-Reg.ttf') format('truetype');
+	src: url('../fonts/BerlinSansFB-Reg.eot');
+	src: url('../fonts/BerlinSansFB-Reg.eot?#iefix') format('embedded-opentype'),
+			url('../fonts/BerlinSansFB-Reg.woff2') format('woff2'),
+			url('../fonts/BerlinSansFB-Reg.woff') format('woff'),
+			url('../fonts/BerlinSansFB-Reg.ttf') format('truetype');
 }
 
 /*
@@ -26,7 +26,7 @@
 body {
 	/* Font styling */
 	color: #444444;
-	font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: 'Arial', '-apple-system', BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 22px;
@@ -80,11 +80,7 @@ a {
 	font-weight: 400;
 
 	transition: all 200ms;
-
-	/* Underline styling (for browsers that support this) */
-	text-decoration-skip-ink: auto;
 	text-decoration-skip: ink;
-	text-underline-offset: 2px;
 }
 
 a:hover,
@@ -358,7 +354,7 @@ nav > ul > li > a {
 }
 
 #contactcontent .fields > input:invalid {
-	background-image: url('./img/icon-ui-1-close.svg');
+	background-image: url('../img/icon-ui-1-close.svg');
 	background-position: 276px center;
 	background-repeat: no-repeat;
 	background-size: 15px 15px;
