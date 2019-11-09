@@ -166,7 +166,7 @@ img {
 	left: 0;
 	z-index: -1;
 
-	height: 100%;
+	min-height: 100%;
 	width: 100%;
 
 	object-fit: cover;
@@ -177,7 +177,7 @@ img {
 @supports(width: calc(100% + 8px)) {
 	.background-video {
 		filter: grayscale(0.4) blur(5px);
-		height: calc(100% + 8px);
+		min-height: calc(100% + 8px);
 		width: calc(100% + 8px);
 	}
 }
@@ -507,7 +507,7 @@ nav > ul > li > a {
  */
 @media screen and (max-width: 1179px) {
 	.page-content {
-		-ms-grid-columns: 400px 400px;
+		display: grid;
 		grid-template-columns: repeat(2, 400px);
 		grid-template-areas:
 			"nav nav"
@@ -523,7 +523,6 @@ nav > ul > li > a {
 	 * ─── SPORT ──────────────────────────────────────────────────────────────────────
 	 */
 	#sportcontent .sport-clubs {
-		display: -ms-grid;
 		display: grid;
 		grid-column-gap: 24px;
 		column-gap: 24px;
@@ -596,51 +595,6 @@ nav > ul > li > a {
 
 	.page-footer {
 		padding-bottom: 128px;
-	}
-
-	/*
-	 * ─── IE 11 LAYOUT FIX ───────────────────────────────────────────────────────────
-	 */
-	nav {
-		-ms-grid-column-span: 2;
-		-ms-grid-column: 1;
-		-ms-grid-row: 1;
-	}
-
-	#maincontent {
-		-ms-grid-column-span: 2;
-		-ms-grid-column: 1;
-		-ms-grid-row: 2;
-	}
-
-	#secondarycontent {
-		-ms-grid-column-span: 2;
-		-ms-grid-column: 1;
-		-ms-grid-row: 3;
-	}
-
-	#sportcontent {
-		-ms-grid-column-span: 2;
-		-ms-grid-column: 1;
-		-ms-grid-row: 4;
-	}
-
-	#referalcontent {
-		-ms-grid-column-span: 2;
-		-ms-grid-column: 1;
-		-ms-grid-row: 5;
-	}
-
-	#contactcontent {
-		-ms-grid-column-span: 2;
-		-ms-grid-column: 1;
-		-ms-grid-row: 6;
-	}
-
-	.page-footer {
-		-ms-grid-column-span: 2;
-		-ms-grid-column: 1;
-		-ms-grid-row: 7;
 	}
 	/* ──────────────────────────────────────────────────────────────────────────────── */
 }
@@ -860,3 +814,64 @@ nav > ul > li > a {
 		padding: 0 16px 16px;
 	}
 }
+
+/*
+ * ─── IE 11 fixes ──────────────────────────────────────────────────────
+ */
+ @media all and (-ms-high-contrast:none) {
+	 .page-content {
+		 max-width: 1080px;
+		 margin: 0 auto;
+	 }
+
+	#contactcontent .fields {
+		display: block;
+	}
+}
+/* ──────────────────────────────────────────────────────────────────────────────── */
+
+/*
+ * ─── IE 11 fixes for tablet ──────────────────────────────────────────────────────
+ */
+@media all and (max-width: 1179px) and (-ms-high-contrast:none) {
+	.page-content {
+		display: block;
+	}
+
+	#sportcontent .sport-clubs {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	#sportcontent .sport-clubs > li {
+		flex: 1 1 45%;
+		min-width: 275px;
+		align-items: stretch;
+	}
+
+	#sportcontent .sport-clubs > li:nth-child(odd) {
+		margin-right: 16px;
+	}
+
+	#contactcontent .fields {
+		display: block;
+	}
+}
+/* ──────────────────────────────────────────────────────────────────────────────── */
+
+/*
+ * ─── IE 11 fixes for tablet ──────────────────────────────────────────────────────
+ */
+ @media all and (max-width: 900px) and (-ms-high-contrast:none) {
+	 .main-header {
+		 height: 225px;
+	 }
+
+	.main-header video {
+		min-width: 150%;
+		min-height: 100%;
+		width: unset;
+
+	}
+}
+/* ──────────────────────────────────────────────────────────────────────────────── */
