@@ -114,7 +114,6 @@ img {
  * ─── PAGE CONTENT ───────────────────────────────────────────────────────────────
  */
 .page-content {
-	display: -ms-grid;
 	display: grid;
 	padding: 0;
 	justify-content: center;
@@ -124,10 +123,6 @@ img {
 	column-gap: 16px;
 	grid-row-gap: 16px;
 	row-gap: 16px;
-
-	/* IE11 grid definition */
-	-ms-grid-columns: 780px 16px 364px;
-	-ms-grid-rows: auto 16px auto 16px auto 16px auto 16px auto 16px auto;
 
 	grid-template-columns: 780px 364px;
 	grid-template-areas:
@@ -187,9 +182,6 @@ img {
  * ─── NAVIGATION ─────────────────────────────────────────────────────────────────
  */
 nav {
-	-ms-grid-column-span: 3;
-	-ms-grid-column: 1;
-	-ms-grid-row: 1;
 	background-color: #FFFFFF;
 	grid-area: nav;
 	padding-left: 48px;
@@ -224,8 +216,6 @@ nav > ul > li > a {
  * ─── MAIN CONTENT ───────────────────────────────────────────────────────────────
  */
 #maincontent {
-	-ms-grid-column: 1;
-	-ms-grid-row: 3;
 	grid-area: main-content;
 }
 
@@ -238,8 +228,6 @@ nav > ul > li > a {
  * ─── SECONDARY CONTENT ──────────────────────────────────────────────────────────
  */
 #secondarycontent {
-	-ms-grid-column: 1;
-	-ms-grid-row: 5;
 	grid-area: secondary-content;
 }
 /* ──────────────────────────────────────────────────────────────────────────────── */
@@ -249,8 +237,6 @@ nav > ul > li > a {
  * ─── SPORT CONTENT ──────────────────────────────────────────────────────────────
  */
 #sportcontent {
-	-ms-grid-column: 1;
-	-ms-grid-row: 7;
 	grid-area: sport-content;
 }
 
@@ -307,8 +293,6 @@ nav > ul > li > a {
  * ─── REFERRAL ───────────────────────────────────────────────────────────────────
  */
 #referalcontent {
-	-ms-grid-column: 3;
-	-ms-grid-row: 3;
 	grid-area: referral;
 	padding: 32px 64px 0 0;
 	position: sticky;
@@ -325,8 +309,6 @@ nav > ul > li > a {
  * ─── CONTACT ────────────────────────────────────────────────────────────────────
  */
 #contactcontent {
-	-ms-grid-column: 1;
-	-ms-grid-row: 9;
 	grid-area: contact;
 }
 
@@ -344,16 +326,12 @@ nav > ul > li > a {
 }
 
 #contactcontent .fields {
-	display: -ms-grid;
 	display: grid;
 
 	grid-column-gap: 16px;
 	column-gap: 16px;
 	grid-row-gap: 8px;
 	row-gap: 8px;
-
-	-ms-grid-columns: 300px 16px 300px;
-	-ms-grid-rows: auto 8px auto 8px auto 8px auto;
 
 	grid-template-columns: repeat(2, 300px);
 	grid-template-areas:
@@ -394,39 +372,26 @@ nav > ul > li > a {
 }
 
 #contactcontent .fields > label:nth-of-type(1) {
-	-ms-grid-column: 1;
-	-ms-grid-row: 1;
 	grid-area: name-label;
 }
 
 #contactcontent .fields > input:nth-of-type(1) {
-	-ms-grid-column: 1;
-	-ms-grid-row: 3;
 	grid-area: name-input;
 }
 
 #contactcontent .fields > label:nth-of-type(2) {
-	-ms-grid-column: 3;
-	-ms-grid-row: 1;
 	grid-area: email-label;
 }
 
 #contactcontent .fields > input:nth-of-type(2) {
-	-ms-grid-column: 3;
-	-ms-grid-row: 3;
 	grid-area: email-input;
 }
 
 #contactcontent .fields > label:nth-of-type(3) {
-	-ms-grid-column: 1;
-	-ms-grid-row: 5;
 	grid-area: message-label;
 }
 
 #contactcontent .fields > textarea {
-	-ms-grid-column-span: 3;
-	-ms-grid-column: 1;
-	-ms-grid-row: 7;
 	grid-area: message-textarea;
 	min-height: 120px;
 	resize: vertical;
@@ -463,9 +428,6 @@ nav > ul > li > a {
  * ─── FOOTER ─────────────────────────────────────────────────────────────────────
  */
 .page-footer {
-	-ms-grid-column-span: 3;
-	-ms-grid-column: 1;
-	-ms-grid-row: 11;
 	align-items: center;
 	background-color: #F5F5F5;
 	display: flex;
@@ -588,7 +550,6 @@ nav > ul > li > a {
 	}
 
 	#contactcontent .fields {
-		-ms-grid-columns: 1fr 1fr;
 		grid-template-columns: repeat(2, 1fr);
 	}
 	/* ──────────────────────────────────────────────────────────────────────────────── */
